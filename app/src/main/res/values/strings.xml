@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BLEDEMO</string>
+    <string name="device_null">您还没有选定设备</string>
+    <string name="can_not_support">您的手机不能正常使用本APP(系统版本过低或不支持蓝牙4.0).</string>
+</resources>
