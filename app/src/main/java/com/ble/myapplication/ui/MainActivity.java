@@ -49,6 +49,7 @@ public class MainActivity extends Activity {
     private BluetoothDevice mDevice = null;
     private ProgressDialog progressDialog;
 
+    //是否打开手机蓝牙的回调
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
@@ -62,9 +63,6 @@ public class MainActivity extends Activity {
             }
         }
     }
-
-
-
 
 
     public void writeA(View v) {
