@@ -1,7 +1,9 @@
 Android BLE API指南：https://developer.android.google.cn/guide/topics/connectivity/bluetooth-le.html 无需翻墙哟
 
 不是自我介绍的自我介绍：
+
 开聊之前，本人郑重说明：我绝对不是三星粉。
+
 IOS支持BLE的时候，android还不支持BLE,刚好当时的公司做了一个BLE项目（灯泡），我于是关注了android上的BLE，奈何彼时官方不支持，只有某些厂商支持，
 网上的资料也是少之又少，一个偶然的机会，我得知三星的某些机型（没记错的话，android4.2.2，同时又是Galaxy系列）支持了BLE，于是乎咬牙（当时工资比较低）
 买了一台当时的旗舰机-三星S4，算是踏入了android BLE的大门。过了一段时间，android4.3出来了，终于官方支持了BLE，所以我的前3个BLE项目，兼容了android4.3和
