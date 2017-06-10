@@ -29,22 +29,23 @@ fff2 -> 0000fff2-0000-1000-8000-00805f9b34fb
 聪明的你，应该看到规律了，但有时这也是1个坑，你是做APP的，单片机工程师告诉你服务id是fff1，于是你拿来0000fff1-0000-1000-8000-00805f9b34fb，获取，
 get特征，空指针了，你挠头了，其实这也许是单片机工程师忘记调整参数了，如果单片机的代码是128的UUID，你肯定就获取不到了；当然，APP也是有办法确认UUID的情况，
 在
-    @Override
+
+     @Override
      public void onServicesDiscovered(final BluetoothGatt gatt, int status) {
          LogAndToastUtil.log("回调onServicesDiscovered()->status:%s", status);
          if (status == BluetoothGatt.GATT_SUCCESS) {
              LogAndToastUtil.log("成功发现服务...mac地址:%s", gatt.getDevice().getAddress());
 
 
-      List<BluetoothGattService> services = gatt.getServices();
-         for (BluetoothGattService service : services) {
-            LogAndToastUtil.log("service的uuid:%s", service.getUuid());
-            List<BluetoothGattCharacteristic> characteristics = service.getCharacteristics();
-            for (BluetoothGattCharacteristic cc : characteristics) {
-               LogAndToastUtil.log("特征的uuid:%s", cc.getUuid());
+            List<BluetoothGattService> services = gatt.getServices();
+            for (BluetoothGattService service : services) {
+                LogAndToastUtil.log("service的uuid:%s", service.getUuid());
+                List<BluetoothGattCharacteristic> characteristics = service.getCharacteristics();
+                for (BluetoothGattCharacteristic cc : characteristics) {
+                    LogAndToastUtil.log("特征的uuid:%s", cc.getUuid());
+                }
+                LogAndToastUtil.log("-------------------------------------");
             }
-            LogAndToastUtil.log("-------------------------------------");
-         }
        }
      }
  在这里你可以把设备上的服务和特征都打印出来（描述及其多，也没有必要打印），你就可以确认UUID是不是你想要的；注意：LogAndToastUtil.log是我封装的一个日志
